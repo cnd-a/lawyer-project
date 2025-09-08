@@ -54,7 +54,7 @@ const Home = () => {
     <div className="home-container">
       {/* Carousel */}
       <section className="free-consultation">
-        <h2>Top Consultation</h2>
+        <h2>Top Consultation, @drl lu coba cek di Home.jsx soalny gw ada limit di frontend carouselnya buat sementara</h2>
 
         <div className="carousel-wrapper">
           <button
@@ -76,8 +76,8 @@ const Home = () => {
                 // simple empty-state placeholder
                 <div className="lawyer-loading">No lawyers found</div>
               )}
-
-              {lawyers.map((lawyer) => (
+              {/*Ini temporary cuma buat test kalo array di limit kyk gmn*/}
+              {lawyers.slice(0,5).map((lawyer) => (
                 <div className="lawyer-card" key={lawyer.lawyer_id}>
                   <img
                     src="https://a.pinatafarm.com/354x640/37342d2d2e/cristiano-ronaldo-smile.jpg"
