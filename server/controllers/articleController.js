@@ -18,6 +18,17 @@ const getArticleById = async (req, res) => {
   } catch(err) {
     console.error(err);
   }
-}
+};
 
-module.exports = { getArticles, getArticleById }
+const editArticle = async(req, res) => {
+  const id = parseInt(req.params.id);
+
+  try {
+    const EditArticleById = await db.query('SELECT * FROM articles WHERE article_id = ?', [id])
+    res.status(200).json(EditArticleById);
+  } catch(err) {
+    console.error(err);
+  }
+};
+
+module.exports = { getArticles, getArticleById, editArticle }

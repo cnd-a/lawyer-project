@@ -20,7 +20,7 @@ const Article = () => {
   }, [id]);
 
   if (!article) 
-    return <div className="spinner">Loading...</div>
+    return <div className="spinner">Wait a momment or ty again later...</div>
 
   return(
     <div className="article-page">
@@ -39,7 +39,12 @@ const Article = () => {
         className="article-page__image"
       />
       <p className="article-page__content">{article.article_content}</p>
+
+      <Link to={`/articles/edit/${article.article_id}`}>
+        <button className="btn-signup">Edit</button>
+        </Link>
     </div>
+    
   );
 }
 

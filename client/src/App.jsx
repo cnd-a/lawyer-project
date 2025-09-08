@@ -12,6 +12,7 @@ import Lawyers from "./pages/Lawyers/Lawyers.jsx";
 import CreateLawyer from "./pages/CreateLawyer/CreateLawyer.jsx";
 import ArticleList from "./pages/ArticleList/ArticleList.jsx";
 import Article from "./components/Article/Article.jsx";
+import EditArticle from "./components/Article/EditArticle.jsx";
 import CreateArticle from "./pages/CreateArticle/CreateArticle.jsx";
 
 // Route configArticle  
@@ -25,6 +26,7 @@ const routes = [
   { path: "/lawyers", element: <Lawyers /> },
   { path: "/lawyers/create", element: <CreateLawyer /> },
 
+  { path: "/articles/edit/:id", element: <EditArticle /> },
   { path: "/articles", element: <ArticleList /> },
   { path: "/articles/:id", element: <Article /> },
   { path: "/articles/create", element: <CreateArticle /> },
