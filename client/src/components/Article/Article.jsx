@@ -3,17 +3,19 @@ import { useParams, Link } from 'react-router-dom';
 import './Article.css';
 
 const Article = () => {
+  const ARTICLE_API = import.meta.env.VITE_JURISTIQ_API;
+
   const { id } = useParams();
   const [article, setArticle] = useState(null);
 
   useEffect(() => {
     const getArticle = async () => {
       try{
-        const res = await fetch(`http://localhost:3000/articles/${id}`);
+        const res = await fetch(`${ARTICLE_API}/articles/${id}`);
         const data = await res.json();
         setArticle(data[0]); //This works because the backend wraps the article in an array, you have to take the first element of that array:  
       } catch (err) {
-        console.error("Failed to fetch: ", err);
+        throw new Error("Failed to fetch: ", err.message);
       }
     };
     getArticle()
