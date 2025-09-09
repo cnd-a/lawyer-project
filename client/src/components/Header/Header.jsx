@@ -2,6 +2,9 @@ import { Link } from "react-router-dom";
 import "./Header.css";
 
 const Header = () => {
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+  }
   return (
     <header className="header">
       {/* Left: Logo */}
@@ -23,6 +26,9 @@ const Header = () => {
         </Link>
         <Link to="/login">
         <button className="btn-signin">Sign In</button>
+        </Link>
+        <Link to="/login">
+        <button className="btn-signin" onClick={handleLogout}>Sign Out</button>
         </Link>
       </div>
     </header>
