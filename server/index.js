@@ -11,6 +11,7 @@ const PORT = 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+// Make sure to setup CORS properly before production!
 // const corsOptions = { origin: 'http://localhost:5173' };
 app.use(cors());
 

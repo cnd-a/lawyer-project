@@ -1,6 +1,6 @@
 /* TODO:
  * Implement a way to compress image into JPG
- * Encrypt image
+ * Encrypt uploaded image
 */
 const path = require('path');
 const multer = require('multer');
