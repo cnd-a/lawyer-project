@@ -77,9 +77,7 @@ const SplashScreen = () => {
           </div>
         )}
 
-        <Link to="/home">
-          <button className="skip-link" onClick={handleSkip}>Skip</button>
-        </Link>
+        <button className="skip-link" onClick={handleSkip}>Skip</button>
       </div>
     </div>  
   );

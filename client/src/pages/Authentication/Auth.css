@@ -68,6 +68,13 @@
   transform: translateY(5px);
 }
 
+.form-container img {
+  width: 10em;
+  height: 10em;
+  border: 0.2em solid black;
+  border-radius: 50%;
+}
+
 .auth-footer {
   margin-top: 16px;
   text-align: center;

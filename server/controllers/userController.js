@@ -1,37 +1,47 @@
 const db = require('../db.js');
 const bcrypt = require('bcrypt');
-const saltRounds = 10;
+
 
 const register = async (req, res) => {
   const { email, password } = req.body;
+  const image = req.file;
 
   try {
-    const rows = await db.query("SELECT * FROM users WHERE email = ?", [
-      email,
-    ]);
+    //Checks if the current email already exists
+    const rows = await db.query("SELECT * FROM users WHERE email = ?", [email]);
+    if (rows.length > 0) {
+      return res.status(409).json({message: "This Email already exists, please try logging in." });
+    } 
 
     //Hash
-    // const hashedPassword = await bcrypt.hash(password, saltRounds);
-    
+    const hashedPassword = await bcrypt.hash(password, saltRounds);
+    const saltRounds = 10;
 
-    if (rows.length > 0) {
-      return res.status(409).json({message: "Email already exists. Try logging in." });
+    //Checks if user uploads an image
+    const imagePath = image.filename
+    let createUserQuery
+
+    if (image){
+      createUserQuery = "INSERT INTO users (email, password, image) VALUES (?, ?, ?)";
+      params = [email, hashedPassword, imagePath]
     } else {
-      bcrypt.hash(password, saltRounds, async (err, hashedPassword) => {
-        if (err) {
-          console.log("Hashing password error", err);
-        } else {
-          const result = await db.query(
-          "INSERT INTO users (email, password) VALUES (?, ?)", [email, hashedPassword]
-      );
-      console.log(result);
-      res.status(201).json({ message: "Registration successful" });
-        }
-      });
-    }  
+      createUserQuery = "INSERT INTO users (email, password) VALUES (?, ?)"; 
+      params = [email, hashedPassword];
+    }
+
+    const result = await db.query(createUserQuery, params)
+
+    if (result.affectedRows > 0) {
+      console.log(`Created user with id ${result}`);
+      res.status(201).json({ message: "Registration successful, please login next." });
+    } else {
+      console.log("Failed to create user", result);
+      res.status(500).json({ message: "Failed to register, please try again." });
+    }
+
   } catch (err) {
     console.log(err);
-    res.status(500).json({message: "Server error"});
+    res.status(500).json({ message: "Server error" });
   }
 };
 
@@ -69,4 +79,4 @@ const login = async (req, res) => {
   }
 };
 
-module.exports = {register, login}
+module.exports = { register, login }
