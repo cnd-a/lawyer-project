@@ -2,38 +2,38 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Auth.css';
 
-const longText = "People who use our service may have uploaded your contact information to Lawyery. Learn more. By tapping Submit, you agree to create an account and to Lawyery's Terms, Privacy Policy and Cookies Policy. The privacy policy describes the ways we can use the information we collect when you create an account. For example, we use this information to provide, personalise and improve our products, including ads."
-
 const Login = () => {
-      const navigate = useNavigate();
+  const navigate = useNavigate();
 
-      const [loginData, setLoginData] = useState({
-        email: '',
-        password: '',
+  const [loginData, setLoginData] = useState({
+    email: '',
+    password: '',
+  });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try{
+      const res = await fetch('http://localhost:3000/users/login', {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(loginData),
       });
-
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-      try{
-        const res = await fetch('http://localhost:3000/users/login', {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(loginData),
-        });
-        const data = await res.json();
-        if (res.ok){
-          alert("Welcome");
-          navigate('/home');
-        } else{
-          alert(data.message || "Login error");
-        }
-      } catch (err){
-        console.error("Error: ", err);
-        alert("Network error")
+      const data = await res.json();
+      if (res.ok){
+        alert("Welcome to Juristiq");
+        localStorage.setItem('token', data.token);
+        navigate('/home');
+      } else{
+        alert(data.message || "Login error");
       }
+    } catch (err){
+      console.error("Error: ", err);
+      alert("Network error")
     }
+  };
+
   return(
     <div className="auth-container">
       <h1>Login Page</h1>
