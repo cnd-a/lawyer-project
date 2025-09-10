@@ -9,7 +9,7 @@ const Header = () => {
     <header className="header">
       {/* Left: Logo */}
       <div className="header-logo">
-        <img src="/images/logo1.png" alt="Juristiq logo" />
+        <img src="/images/juristiq.png" alt="Juristiq logo" />
         <p>JURISTIQ</p>
       </div>
 
@@ -17,6 +17,7 @@ const Header = () => {
       <nav className="header-nav">
         <Link to="/home">Home</Link>
         <Link to="/articles">Articles</Link>
+        <Link to="/lawyers">Lawyers</Link>
       </nav>
 
       {/* Right: Auth Buttons */}

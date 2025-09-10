@@ -9,12 +9,12 @@ import Login from "./pages/Authentication/Login.jsx";
 import Register from "./pages/Authentication/Register.jsx";
 
 import Home from "./pages/Home/Home.jsx";
-import Lawyers from "./pages/Lawyers/Lawyers.jsx";
-import CreateLawyer from "./pages/CreateLawyer/CreateLawyer.jsx";
+import Lawyers from './pages/Lawyers/LawyerList/Lawyers.jsx';
+import CreateLawyer from "./pages/Lawyers/CreateLawyer/CreateLawyer.jsx";
 
-import ArticleList from "./pages/ArticleList/ArticleList.jsx";
-import Article from "./components/Article/Article.jsx";
-import CreateArticle from "./pages/CreateArticle/CreateArticle.jsx";
+import ArticleList from "./pages/Articles/ArticleList/ArticleList.jsx";
+import Article from "./pages/Articles/Article/Article.jsx";
+import CreateArticle from "./pages/Articles/CreateArticle/CreateArticle.jsx";
 
 import ProtectedRoute from "./ProtectedRoute.jsx";
 

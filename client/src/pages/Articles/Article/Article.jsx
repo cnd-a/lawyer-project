@@ -21,6 +21,7 @@ const Article = () => {
     getArticle()
   }, [id]);
 
+  //This shows when the api isn't finished fetching
   if (!article) 
     return <div className="spinner">Loading...</div>
 

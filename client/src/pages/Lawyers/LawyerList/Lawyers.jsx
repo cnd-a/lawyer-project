@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import LawyerPopup from '../../components/LawyerPopup/LawyerPopup.jsx';
+import LawyerPopup from '../LawyerPopup/LawyerPopup.jsx';
 import './Lawyers.css'; 
 
 const Lawyers= () => {
