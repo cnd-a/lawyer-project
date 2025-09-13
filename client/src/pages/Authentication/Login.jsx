@@ -53,16 +53,15 @@ const Login = () => {
             value={loginData.password}
             onChange={(e) => setLoginData({ ...loginData, password: e.target.value})}
             type="password" maxLength="35" placeholder="Password" required/>
-
-                <button type="submit">Login</button>
+          
+          <button type="submit">Login</button>
         </form>
         <div className="auth-footer">
           Don't have an account? <a href="/register">Register</a>
         </div>
       </div>
     </div>
-    
-  )
+  );
 }
 
 export default Login;
