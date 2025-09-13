@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Splash1 from '../../../public/images/Splash1.png';
+import SplashImg from '/src/assets/Splash1.png';
 import './SplashScreen.css';
 import { Link } from 'react-router-dom';
 
@@ -47,13 +47,13 @@ const SplashScreen = () => {
     <div className='landing-page-body'>
       {/* Logo + brand name above card */}
       <div className="splash-header">
-        <img src="/images/logo1.png" alt="Juristiq logo" />
+        <img src="/images/juristiq.png" alt="Juristiq logo" />
         <p>JURISTIQ</p>
       </div>
 
       <div className="onboarding-container">
         <div className="image-container">
-          <img src={Splash1} alt="Illustration" className="illustration" />
+          <img src={SplashImg} alt="Illustration" className="illustration" />
         </div>
 
         <div className="pagination-dots">
