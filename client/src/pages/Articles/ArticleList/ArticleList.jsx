@@ -3,12 +3,14 @@ import { Link } from 'react-router-dom';
 import './ArticleList.css';
 
 const ArticleList = () => {
+  const ARTICLE_API = import.meta.env.VITE_JURISTIQ_API;
+
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
     const getArticles = async () => {
       try {
-        const res = await fetch('http://localhost:3000/articles');
+        const res = await fetch(`${ARTICLE_API}/articles`);
         const data = await res.json();
         setArticles(data); 
       } catch (err) {

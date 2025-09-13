@@ -1,0 +1,103 @@
+:root {
+  --blue: #1446A0;
+  --beige: #EBEBD3;
+  --onyx: #3C3C3B;
+}
+
+.lawyer-page-container {
+  display: flex;
+  background-size: cover;
+  padding: 20px;
+  font-size: 1.25em;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+  /* box-shadow:inset 10px 0px 5px var(--blue); */
+}
+
+.search-container{
+  position:sticky;
+  top: 0;
+
+  border-radius: 0px 0px 95% 0px;
+  font-size: small;
+  max-width: 30%;
+  padding: 20px;
+  padding-left: 5em;
+  background-color: #1445a07c;
+  color: rgb(255, 255, 255);  
+}
+
+.search-container button{
+  margin: 10px;
+}
+
+.search-container input{
+  padding: 2px;
+  border: none;
+  height: 27px;
+  box-shadow: 0px 5px 5px #3B5D86;
+}
+
+.placeholder{
+  border: 3px dotted var(--onyx);
+  padding: 5px;
+}
+
+.lawyer-container {
+  max-height: 12em;
+  background-color:rgba(100, 148, 237, 0.103);
+  display: flex;
+  /* border: 3px dotted var(--onyx); */
+  /* margin-top: 10px; */
+  padding: 15px;
+  width: 60em;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.lawyer-container h2{
+  background-color: white;
+  border: double;
+  max-width:max-content;
+  font-size: larger;
+  padding: 5px;
+}
+
+.lawyer-container p{
+  margin: 5px;
+  padding: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  line-height: 1.4;
+}
+
+.lawyer-container:hover { 
+  box-shadow: 10px 10px 10px #3B5D86;
+  background-color:whitesmoke; 
+  transition: 200ms ease; 
+  transform: translateY(-10px) translateZ(1px);
+ }
+
+.lawyer-container img {
+  padding: 5px;
+  max-height: 7em;
+  max-width: 7em;
+  min-width: 7em;
+  object-fit: cover; /* Kata GPT buat bantu maintain aspect ration & crop */
+  border-radius: 1em;
+  border: 5px solid var(--blue);
+}
+
+.lawyer-container button {
+  width: 10em;
+}
+
+.lawyer-details {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1em;
+}

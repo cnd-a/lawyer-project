@@ -1,0 +1,53 @@
+:root {
+  --blue: #1446A0;
+  --beige: #EBEBD3;
+  --onyx: #3C3C3B;
+}
+
+.header {
+  margin: 0;
+  /* width: 100%; */
+  color: var(--beige);
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: space-around;
+  align-items:center;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+  /* position: sticky; */
+  /* top: 0; */
+  /* z-index: 10;  */
+}
+
+.nav-bar-button{
+  background-color: whitesmoke;
+  color: var(--onyx);
+}
+
+.nav-bar-button:hover{
+  border-bottom: 3px solid var(--blue);
+  box-shadow: 0 2px 1px var(--onyx);
+}
+
+.nav-bar p{
+  display: flex;
+  padding: 20px;
+}
+
+/* .buttons button{
+  padding: 8px 16px;
+} */
+
+.logo{
+  
+  text-align: center;
+  /* background-color: white; */
+  border-radius: 10%;
+  color: #1445a2;
+  padding: 3px;
+}
+
+.logo img{
+  height: 40px;
+  width: 40px;
+  }

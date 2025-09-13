@@ -6,9 +6,11 @@ import Popup from 'reactjs-popup';
 import './LawyerPopup.css'
 
 const LawyerPopup = ({ lawyer }) => {
+  const ARTICLE_API = import.meta.env.VITE_JURISTIQ_API;
+
   const deleteLawyer = async (lawyer_id) => {
     try{
-      const res = await fetch(`http://localhost:3000/lawyers/${lawyer_id}`, {
+      const res = await fetch(`${ARTICLE_API}/lawyers/${lawyer_id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -28,7 +30,7 @@ const LawyerPopup = ({ lawyer }) => {
 
   return(
     <Popup 
-      trigger={<button>Details</button>} 
+      trigger={<button className='details-button'>Details</button>} 
       position="left center"
       modal
     >

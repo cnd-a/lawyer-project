@@ -1,0 +1,50 @@
+.article-form-container {
+  margin: 5em 20em 0 20em;
+}
+
+.article-form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  width: 100%;
+}
+
+.article-form-container input,
+.article-form-container textarea {
+  width: 100%; /* ensures input/textarea fills container */
+  padding: 1em;
+  box-sizing: border-box; /* include padding in width */
+  font-family: inherit;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.article-form-container input {
+  height: 3em;
+}
+
+.article-form-container textarea {
+  height: 20em;
+  overflow-x: hidden;      /* hides horizontal scroll */
+  overflow-y: auto;        /* shows vertical scroll if needed */
+  resize: vertical;        /* only allow vertical resize */
+  white-space: pre-wrap;   /* wrap long text */
+  word-break: break-word;  /* break long words if needed */
+}
+
+.article-form-container button {
+  cursor: pointer;
+  align-self: center;
+  height: 3em;
+  width: 10em;
+  border-radius: 10px;
+  color: white;
+  background-color: blue;
+  border: none;
+}
+
+.article-form-container button:hover {
+  background-color: darkblue;
+}
+
