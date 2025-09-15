@@ -50,6 +50,9 @@ const ArticleList = () => {
           </div>
         </Link>
       ))}
+      <Link to={'/articles/create'}>
+      <button className="article-list-button" type="submit">➕</button>
+      </Link>
     </div>  
   );
 };
